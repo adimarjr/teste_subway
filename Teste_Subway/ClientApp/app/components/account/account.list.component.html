@@ -1,0 +1,24 @@
+<h1>Cadastro de contas</h1>
+
+
+
+<p *ngIf="!accounts"><em>Carregando...</em></p>
+
+<table class='table' *ngIf="accounts">
+    <thead>
+        <tr>
+            <th>Nome do cliente</th>
+            <th>Telefone</th>
+            <th>Data de nascimento</th>
+            <th>Endereço</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of accounts">
+            <td>{{ item.name }}</td>
+            <td>{{ item.phone }}</td>
+            <td>{{ item.birth }}</td>
+            <td>{{ item.address }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,66 @@
+<div bsModal #createAccountModal="bs-modal" class="modal fade" (onShown)="onShown()" tabindex="-1" role="dialog" aria-labelledby="createAccountModal" aria-hidden="true" [config]="{backdrop: 'static'}">
+    <div class="modal-dialog">
+        <div #modalContent class="modal-content">
+            <form *ngIf="active" #createAccountForm="ngForm" id="frm_create_Account" novalidate (ngSubmit)="save()">
+                <div class="modal-header">
+                    <button type="button" class="close" (click)="close()" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">
+                        <span>Nova conta</span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <div id="Account-details">
+                        <div class="row clearfix" style="margin-top:10px;">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input id="Accountname" type="text" name="AccountName" [(ngModel)]="Account.Name" required maxlength="80" minlength="2" class="validate form-control">
+                                        <label for="Accountname" class="form-label">Nome</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-6">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input id="phone" type="tel" name="phone" [(ngModel)]="Account.phone" required maxlength="15" class="validate form-control">
+                                        <label for="phone" class="form-label">Telefone</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input id="birth" type="date" name="birth" [(ngModel)]="Account.birth" required maxlength="32" class="validate form-control">
+                                        <label for="birth" class="form-label">Nascimento</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input id="address" type="text" name="EmailAddress" [(ngModel)]="Account.address" maxlength="256" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{1,})+$" class="validate form-control">
+                                        <label for="address" class="form-label">Endereço</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button [disabled]="saving" type="button" class="btn btn-default waves-effect" (click)="close()">
+                        Cancelar
+                    </button>
+                    <button [disabled]="!createAccountForm.form.valid || saving" type="submit" class="btn btn-primary waves-effect">
+                        Salvar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

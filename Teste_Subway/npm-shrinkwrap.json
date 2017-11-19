@@ -2059,6 +2059,11 @@
       "from": "mkdirp@>=0.5.1 <0.6.0",
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz"
     },
+    "moment": {
+      "version": "2.18.1",
+      "from": "moment@2.18.1",
+      "resolved": "http://registry.npmjs.org/moment/-/moment-2.18.1.tgz"
+    },
     "ms": {
       "version": "2.0.0",
       "from": "ms@2.0.0",
@@ -2079,6 +2084,11 @@
       "from": "negotiator@0.6.1",
       "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz",
       "dev": true
+    },
+    "ngx-bootstrap": {
+      "version": "1.6.6",
+      "from": "ngx-bootstrap@>=1.6.0 <1.7.0",
+      "resolved": "https://registry.npmjs.org/ngx-bootstrap/-/ngx-bootstrap-1.6.6.tgz"
     },
     "no-case": {
       "version": "2.3.1",
