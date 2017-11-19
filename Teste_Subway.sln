@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Teste_Subway", "Teste_Subway\Teste_Subway.csproj", "{36F5CE02-8DD1-4CCF-ABA9-9E8915126598}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36F5CE02-8DD1-4CCF-ABA9-9E8915126598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36F5CE02-8DD1-4CCF-ABA9-9E8915126598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36F5CE02-8DD1-4CCF-ABA9-9E8915126598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36F5CE02-8DD1-4CCF-ABA9-9E8915126598}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0292541-0E61-441E-818A-8E2FAD4814DA}
+	EndGlobalSection
+EndGlobal
