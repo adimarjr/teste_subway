@@ -21,6 +21,11 @@ namespace TesteSubway.Application.Services
             return accountManager.GetAll();
         }
 
+        public IEnumerable<Client> GetAllActive()
+        {
+            return accountManager.GetAllActive();
+        }
+
         public Client Get(int id)
         {
             return accountManager.GetById(id);

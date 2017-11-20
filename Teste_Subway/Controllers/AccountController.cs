@@ -26,9 +26,16 @@ namespace Teste_Subway.Controllers
 
         // GET api/account/5
         [HttpGet("{id}")]
+        [Route("active-accounts")]
         public Client Get(int id)
         {
             return accountService.Get(id);
+        }
+
+        [HttpGet("active")]
+        public IEnumerable<Client> GetActive()
+        {
+            return accountService.GetAllActive();
         }
 
         // POST api/account

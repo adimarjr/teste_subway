@@ -13,6 +13,6 @@ namespace TesteSubway.Entities
         public string Phone { get; set; }
         public string Address { get; set; }
 
-        public virtual IList<Purchase> Purchases { get; set; }
+        //public virtual IList<Purchase> Purchases { get; set; }
     }
 }
