@@ -1,71 +1,35 @@
-import { Component, ViewChild, Injector, Inject, Output, EventEmitter, ElementRef, OnInit  } from '@angular/core';
-import { ModalDirective } from 'ngx-bootstrap';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Component, Injector, Inject, Output, EventEmitter, ElementRef, OnInit  } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Client } from '../../_models/index';
+import { AccountService } from '../../services/AccountService';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
+class ClientDTO implements Client {
+    constructor(public id: number, public name: string, public phone: string, public birth: Date, public address: string, public active: boolean) { }
+}
 
 @Component({
-    selector: 'account-create',
+    selector: 'create-account-modal',
     templateUrl: './account.create.component.html'
 })
-export class AccountCreateComponent implements OnInit {
-    @ViewChild('createAccountModal') modal: ModalDirective;
-    @ViewChild('modalContent') modalContent: ElementRef;
-
-    @Output() modalSave: EventEmitter<any> = new EventEmitter<any>();
-
+export class AccountCreateComponent {
     active: boolean = false;
     saving: boolean = false;
-    account: Client;
+    public account: Client;
 
-    constructor(
-        injector: Injector,
-        private http: Http,
-        @Inject('BASE_URL') private baseUrl: string
-    ) {
-
-    }
-
-    ngOnInit(): void {
-    }
-
-    show(): void {
+    constructor(private AccountService: AccountService, private router: Router) {
         this.active = true;
-        this.modal.show();
-        this.account = {
-            name: '',
-            birth: '',
-            phone: '',
-            address: '',
-            id: 0,
-            active: false
-        };
+        this.account = new ClientDTO(0, '','',new Date(),'',true);
     }
     
     save(): void {
-        this.create(this.account);
-    }
-
-    create(input: Client) {
-        let url_ = this.baseUrl + 'api/account';
-        let body = JSON.stringify(input);
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let options = new RequestOptions({ headers: headers });
-
-        return this.http.post(url_, body, options)
-            .map(res => res.json().message);
+        this.saving = true;
+        this.AccountService.insert(this.account).subscribe(result => {
+            this.router.navigate(['/account-list']);
+        }, error => console.error(error));
     }
 
     close(): void {
-        this.active = false;
-        this.modal.hide();
+        this.router.navigate(['/account-list']);
     }
-}
-
-interface Client {
-    name: string,
-    birth: string,
-    phone: string,
-    address: string,
-    id: number,
-    active: boolean
 }

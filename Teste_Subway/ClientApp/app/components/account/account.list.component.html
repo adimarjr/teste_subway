@@ -1,24 +1,71 @@
-<h1>Cadastro de contas</h1>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h2>Cadastro de contas</h2>
+        </div>
+        <div class="panel-body">
+            <p *ngIf="!accounts"><em>Carregando...</em></p>
 
-
-
-<p *ngIf="!accounts"><em>Carregando...</em></p>
-
-<table class='table' *ngIf="accounts">
-    <thead>
-        <tr>
-            <th>Nome do cliente</th>
-            <th>Telefone</th>
-            <th>Data de nascimento</th>
-            <th>Endereço</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of accounts">
-            <td>{{ item.name }}</td>
-            <td>{{ item.phone }}</td>
-            <td>{{ item.birth }}</td>
-            <td>{{ item.address }}</td>
-        </tr>
-    </tbody>
-</table>
+            <div class="row">
+                <div class="col-lg-12">
+                    <span>Total de contas ativas: <span class="label label-success">{{ countActive }}</span></span>
+                    <button type="button" class="btn btn-primary pull-right" (click)="create()">Nova conta</button>
+                </div>
+            </div>
+            <fieldset *ngIf="accounts">
+                <legend>Filtro</legend>
+                <div class="col-sm-12">
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <label for="Accountname" class="form-label">Nome</label>
+                            <input id="Accountname" type="text" name="AccountName" [(ngModel)]="search" maxlength="100" minlength="2" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="col-sm-12">
+                    <div class="form-group form-float">
+                        <div class="form-line">
+                            <label for="status" class="form-label">Ativo</label>
+                            <select id="status" name="status" [(ngModel)]="searchActive" class="form-control">
+                                <option value="1">Sim</option>
+                                <option value="0">Não</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>-->
+            </fieldset>
+            <fieldset *ngIf="accounts">
+                <legend>Contas Cadastradas</legend>
+                <div class="body table-responsive">
+                    <table class='table'>
+                        <thead>
+                            <tr>
+                                <th>Nome do cliente</th>
+                                <th>Telefone</th>
+                                <th>Data de nascimento</th>
+                                <th>Endere&ccedil;o</th>
+                                <th>Ativo</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of accounts | filter : search">
+                                <td>{{ item.name }}</td>
+                                <td>{{ item.phone }}</td>
+                                <td>{{ item.birth | date: 'dd/MM/yyyy' }}</td>
+                                <td>{{ item.address }}</td>
+                                <td>{{ item.active?'Sim':'N&atilde;o' }}</td>
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-primary" [routerLink]="['/account-update', item.id]" [disabled]="!item.active"><i class="glyphicon glyphicon-pencil"></i></button>
+                                    <button type="button" class="btn btn-sm btn-danger" (click)="inactivate(item)" [disabled]="!item.active"><i class="glyphicon glyphicon-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+<!--<create-account-modal #createAccountModal (modalSave)="refresh()"></create-account-modal>-->
+<!--<edit-tenant-modal #editTenantModal (modalSave)="refresh()"></edit-tenant-modal>-->

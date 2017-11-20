@@ -19,33 +19,38 @@ namespace TesteSubway.Business.Domain
             repository.Delete(id);
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public virtual IEnumerable<TEntity> GetAll()
         {
             return repository.GetAll();
         }
 
-        public TEntity GetById(int id)
+        public virtual IEnumerable<TEntity> GetAllActive()
+        {
+            return repository.GetAllList(x => x.Active == true);
+        }
+
+        public virtual TEntity GetById(int id)
         {
             return repository.Get(id);
         }
 
-        public int Insert(TEntity entity)
+        public virtual int Insert(TEntity entity)
         {
             entity.Active = true;
             return repository.Insert(entity).ID;
         }
 
-        public int Update(TEntity entity)
+        public virtual int Update(TEntity entity)
         {
             return repository.Update(entity).ID;
         }
 
-        public IEnumerable<TEntity> Where(Expression<Func<TEntity, bool>> expression)
+        public virtual IEnumerable<TEntity> Where(Expression<Func<TEntity, bool>> expression)
         {
             return repository.GetAllList(expression);
         }
 
-        public void Inactivate(int id)
+        public virtual void Inactivate(int id)
         {
             var entity = GetById(id);
             entity.Active = false;

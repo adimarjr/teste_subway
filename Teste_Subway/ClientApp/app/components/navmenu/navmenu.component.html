@@ -19,19 +19,24 @@
                 </li>
                 <li [routerLinkActive]="['link-active']">
                     <a [routerLink]="['/account-list']">
-                        <span class='glyphicon glyphicon-home'></span> Contas
+                        <span class='glyphicon glyphicon-list'></span> Contas
                     </a>
                 </li>
                 <li [routerLinkActive]="['link-active']">
+                    <a [routerLink]="['/purchase-list']">
+                        <span class='glyphicon glyphicon-list'></span> Compras
+                    </a>
+                </li>
+                <!--<li [routerLinkActive]="['link-active']">
                     <a [routerLink]="['/counter']">
                         <span class='glyphicon glyphicon-education'></span> Counter
                     </a>
-                </li>
-                <li [routerLinkActive]="['link-active']">
+                </li>-->
+                <!--<li [routerLinkActive]="['link-active']">
                     <a [routerLink]="['/fetch-data']">
                         <span class='glyphicon glyphicon-th-list'></span> Fetch data
                     </a>
-                </li>
+                </li>-->
             </ul>
         </div>
     </div>

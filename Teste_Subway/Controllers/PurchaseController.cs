@@ -12,7 +12,6 @@ namespace Teste_Subway.Controllers
     public class PurchaseController : Controller
     {
         private PurchaseService purchaseManager;
-        public PurchaseController() : this(new PurchaseService()) { }
         public PurchaseController(PurchaseService purchaseManager)
         {
             this.purchaseManager = purchaseManager;

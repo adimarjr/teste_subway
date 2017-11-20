@@ -21,7 +21,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\AccountService.ts" />
+    <None Remove="ClientApp\app\components\account\account.filter.ts" />
+    <None Remove="ClientApp\app\_models\Client.ts" />
+    <None Remove="ClientApp\app\_models\index.ts" />
+    <None Remove="ClientApp\app\_models\purchase.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TesteSubway.Application\TesteSubway.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\account\account.filter.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\AccountService.ts" />
+    <TypeScriptCompile Include="ClientApp\app\_models\client.ts" />
+    <TypeScriptCompile Include="ClientApp\app\_models\index.ts" />
+    <TypeScriptCompile Include="ClientApp\app\_models\purchase.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
