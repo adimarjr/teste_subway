@@ -159,6 +159,11 @@
       "from": "amdefine@>=0.0.4",
       "resolved": "https://registry.npmjs.org/amdefine/-/amdefine-1.0.1.tgz"
     },
+    "angular2-moment": {
+      "version": "1.7.0",
+      "from": "angular2-moment@latest",
+      "resolved": "https://registry.npmjs.org/angular2-moment/-/angular2-moment-1.7.0.tgz"
+    },
     "angular2-template-loader": {
       "version": "0.6.2",
       "from": "angular2-template-loader@0.6.2",
@@ -2060,9 +2065,9 @@
       "resolved": "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz"
     },
     "moment": {
-      "version": "2.18.1",
-      "from": "moment@2.18.1",
-      "resolved": "http://registry.npmjs.org/moment/-/moment-2.18.1.tgz"
+      "version": "2.19.2",
+      "from": "moment@latest",
+      "resolved": "https://registry.npmjs.org/moment/-/moment-2.19.2.tgz"
     },
     "ms": {
       "version": "2.0.0",
@@ -2085,10 +2090,22 @@
       "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.1.tgz",
       "dev": true
     },
+    "ng2-datetime-picker": {
+      "version": "0.15.1",
+      "from": "ng2-datetime-picker@latest",
+      "resolved": "https://registry.npmjs.org/ng2-datetime-picker/-/ng2-datetime-picker-0.15.1.tgz"
+    },
     "ngx-bootstrap": {
       "version": "1.6.6",
       "from": "ngx-bootstrap@>=1.6.0 <1.7.0",
-      "resolved": "https://registry.npmjs.org/ngx-bootstrap/-/ngx-bootstrap-1.6.6.tgz"
+      "resolved": "https://registry.npmjs.org/ngx-bootstrap/-/ngx-bootstrap-1.6.6.tgz",
+      "dependencies": {
+        "moment": {
+          "version": "2.18.1",
+          "from": "moment@2.18.1",
+          "resolved": "http://registry.npmjs.org/moment/-/moment-2.18.1.tgz"
+        }
+      }
     },
     "no-case": {
       "version": "2.3.1",

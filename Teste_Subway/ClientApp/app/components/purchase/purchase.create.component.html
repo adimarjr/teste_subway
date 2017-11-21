@@ -31,7 +31,7 @@
                         <div class="form-group form-float">
                             <div class="form-line">
                                 <label for="date" class="form-label">Data da compra</label>
-                                <input id="date" type="date" name="birth" [(ngModel)]="purchase.date" required maxlength="32" class="validate form-control">
+                                <input id="date" ng2-datetime-picker date-only="true" date-format="DD/MM/YYYY" name="date" [(ngModel)]="purchase.date" required maxlength="32" class="validate form-control">
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                         <div class="form-group form-float">
                             <div class="form-line">
                                 <label for="value" class="form-label">Valor</label>
-                                <input id="value" type="number" name="value" [(ngModel)]="purchase.value" maxlength="10" required class="validate form-control">
+                                <input id="value" type="number" min="0.00" max="10000.00" step="0.01" name="value" [(ngModel)]="purchase.value" maxlength="10" required class="validate form-control">
                             </div>
                         </div>
                     </div>

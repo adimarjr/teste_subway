@@ -29,7 +29,7 @@
                         <div class="form-group form-float">
                             <div class="form-line">
                                 <label for="birth" class="form-label">Nascimento</label>
-                                <input id="birth" type="date" name="birth" [(ngModel)]="account.birth" required maxlength="32" class="validate form-control">
+                                <input id="birth" ng2-datetime-picker date-only="true" date-format="DD/MM/YYYY" name="birth" [(ngModel)]="account.birth" required maxlength="32" class="validate form-control">
                             </div>
                         </div>
                     </div>
